@@ -13,8 +13,8 @@ PATH=scripts:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/home/easylia:/home/ea
 #log information to know if the bios well turned-on the computer at 8:30:00am
 42 8 * * * /home/easylia/scripts/log-turn-on.sh
 
-#allow the chromium web page to be in the foreground everyminute
-#* * * * * export DISPLAY=:0 && /usr/bin/wmctrl -a Chromium
+#allow to a process/app/page to be in the foreground (everyminute because of poppup risk)
+* * * * * export DISPLAY=:0 && /usr/bin/wmctrl -a Chromium
 
 #at 8:45am launch a unclutter cmd : mouse cursor will disappear each time it stop mouve for 5sec
 45 8 * * * export DISPLAY=:0 && /bin/bash /home/easylia/scripts/hide-mouse.sh
