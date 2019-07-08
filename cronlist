@@ -5,16 +5,16 @@ PATH=scripts:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/home/easylia:/home/ea
 ##########################
 
 #turn-off the laptop at 20:00:00 {monday to friday} 
-0 20 * * 1,2,3,4,5 /home/easylia/scripts/turn-off.sh
+31 18 * * 1,2,3,4,5 /home/easylia/scripts/turn-off.sh
 
 #turn-off the laptop at 8:45:00am {week-end} 
-45 8 * * 6,0 /home/easylia/scripts/turn-off.sh weekend shutdown scheduled
+10 9 * * 6,0 /home/easylia/scripts/turn-off.sh weekend shutdown scheduled
 
 #log information to know if the bios well turned-on the computer at 8:30:00am
-42 8 * * * /home/easylia/scripts/log-turn-on.sh
+05 9 * * * /home/easylia/scripts/log-turn-on.sh
 
-#allow to a process/app/page to be in the foreground (everyminute because of poppup risk)
-* * * * * export DISPLAY=:0 && /usr/bin/wmctrl -a Chromium
+#allow the chromium web page to be in the foreground everyminute
+#* * * * * export DISPLAY=:0 && /usr/bin/wmctrl -a Chromium
 
 #at 8:45am launch a unclutter cmd : mouse cursor will disappear each time it stop mouve for 5sec
-45 8 * * * export DISPLAY=:0 && /bin/bash /home/easylia/scripts/hide-mouse.sh
+03 9 * * * export DISPLAY=:0 && /bin/bash /home/easylia/scripts/hide-mouse.sh
